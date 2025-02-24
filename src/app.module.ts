@@ -20,9 +20,10 @@ import { AppService } from './app.service';
         synchronize: true,
       }),
       inject: [ConfigService],
-    });
+    }),
   ],
   controllers: [AppController],
   providers: [AppService],
 }),
+
 export class AppModule {}
