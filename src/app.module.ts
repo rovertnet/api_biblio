@@ -1,9 +1,8 @@
 import { Module } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config'; // Ajout des importations manquantes
+import { ConfigModule, ConfigService } from '@nestjs/config'; // Ajout des importations manquantes
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { ConfigService } from 'config.service';
 
 @Module({
   imports: [
