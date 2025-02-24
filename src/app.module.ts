@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config'; // Ajout des importations manquantes
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
 @Module({
   imports: [
-    configModule.forRoot()
-
+    ConfigModule.forRoot(), // Correction de l'importation de configModule
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
       useFactory: (configService: ConfigService) => ({
@@ -24,6 +24,5 @@ import { AppService } from './app.service';
   ],
   controllers: [AppController],
   providers: [AppService],
-}),
-
+})
 export class AppModule {}
