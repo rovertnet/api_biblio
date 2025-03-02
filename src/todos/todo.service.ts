@@ -8,6 +8,6 @@ export class TodoService {
   constructor(@InjectRepository(Todo) private readonly TodoRepository: Repository<Todo>,){}
 
   create(dto: {titre: string}){
-    const todo = this.TodoRepository.create({titre: ""})
+    const todo = this.TodoRepository.create(dto)
   }
 }
