@@ -7,5 +7,7 @@ import { Injectable } from "@nestjs/common";
 export class TodoService {
   constructor(@InjectRepository(Todo) private readonly TodoRepository: Repository<Todo>,){}
 
-  create(dto: {titre: string})
+  create(dto: {titre: string}){
+    const todo = this.TodoRepository.create({titre: ""})
+  }
 }
