@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { Todo } from './todos/todo.entity';
+import { join } from 'path';
 
 @Module({
   imports: [
@@ -17,7 +18,7 @@ import { Todo } from './todos/todo.entity';
         username: configService.get('DB_USER'),
         password: configService.get('DB_PASSWORD'),
         database: configService.get('DB_NAME'),
-        entities: [Todo],
+        entities: [join(process.cwd(), "dist/**/*.entity.js")],
         synchronize: true,
       }),
       inject: [ConfigService],
