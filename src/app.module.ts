@@ -3,6 +3,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config'; // Ajout des impor
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { Todo } from './todos/todo.entity';
 
 @Module({
   imports: [
@@ -16,7 +17,7 @@ import { AppService } from './app.service';
         username: configService.get('DB_USER'),
         password: configService.get('DB_PASSWORD'),
         database: configService.get('DB_NAME'),
-        entities: [],
+        entities: [Todo],
         synchronize: true,
       }),
       inject: [ConfigService],
