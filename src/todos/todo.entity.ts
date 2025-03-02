@@ -1,5 +1,3 @@
-export class todo {
-    id: number;
-    title: string;
-    completed: boolean;
-} 
+import { Entity } from "typeorm";
+
+@Entity({ name:"todos" })
