@@ -7,7 +7,9 @@ import { CreateTodo } from './dtos/create-todos.dto';
 
 @Injectable()
 export class TodoService {
-  constructor(@InjectRepository(Todo) private readonly TodoRepository: Repository<Todo>,){}
+  constructor(
+    @InjectRepository(Todo) private readonly TodoRepository: Repository<Todo>,
+  ) {}
 
   async create(dto: CreateTodo){
     const todo = this.TodoRepository.create(dto);
