@@ -1,9 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config'; // Ajout des importations manquantes
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { Todo } from './todos/todo.entity';
 import { join } from 'path';
 import { TodoController } from './todos/todo.controller';
 import { TodoService } from './todos/todo.service';
