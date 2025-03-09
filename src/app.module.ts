@@ -18,7 +18,7 @@ import { join } from 'path';
         username: configService.get('DB_USER'),
         password: configService.get('DB_PASSWORD'),
         database: configService.get('DB_NAME'),
-        entities: [join(process.cwd(), "dist/**/*.entity.js")],
+        entities: [join(process.cwd(), 'dist/**/*.entity.js')],
         synchronize: true,
       }),
       inject: [ConfigService],
