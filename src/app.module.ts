@@ -5,6 +5,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { Todo } from './todos/todo.entity';
 import { join } from 'path';
+import { TodoController } from './todos/todo.controller';
+import { TodoService } from './todos/todo.service';
 
 @Module({
   imports: [
@@ -24,7 +26,7 @@ import { join } from 'path';
       inject: [ConfigService],
     }),
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [TodoController],
+  providers: [TodoService],
 })
 export class AppModule {}
